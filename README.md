@@ -1,0 +1,101 @@
+Character-Level RNN/LSTM Text Generator
+This project implements character-level RNN and LSTM models using PyTorch to learn from the classic novel The Mysterious Island by Jules Verne (sourced from Project Gutenberg).
+
+ Overview
+Preprocesses text by extracting and encoding characters.
+
+Generates training sequences using a sliding window.
+
+Defines PyTorch Dataset and DataLoader for batching.
+
+Implements both LSTM and RNN models for text prediction.
+
+Trains the models and evaluates character-level accuracy.
+
+ Dependencies
+Python 3.7+
+
+PyTorch
+
+NumPy
+
+Install dependencies:
+
+bash
+Copy
+Edit
+pip install torch numpy
+
+Dataset
+The text is extracted from 1268-0.txt, downloaded from Project Gutenberg. The relevant content is sliced between:
+
+sql
+Copy
+Edit
+Start: 'THE MYSTERIOUS ISLAND'  
+End: 'End of the Project Gutenberg'
+
+Preprocessing
+Creates a character vocabulary (char2int and char_array)
+
+Encodes text as integer sequences
+
+Generates training chunks of length 41 (seq_length=40 + 1)
+
+Model Architectures
+Two models are implemented:
+
+LSTMModel
+Embedding → LSTM → Fully Connected (FC)
+
+RNNModel
+Embedding → RNN → Fully Connected (FC)
+
+Training
+The models are trained using:
+
+CrossEntropyLoss
+
+Adam optimizer
+
+Accuracy is calculated per epoch
+
+Run training:
+
+python
+Copy
+Edit
+train_model(lstm_model, model_type='lstm')
+train_model(rnn_model, model_type='rnn')
+Model Checkpoints
+Saved models:
+
+lstm_model.pth
+
+rnn_model.pth
+
+You can reload and fine-tune them using:
+
+python
+Copy
+Edit
+lstm_loaded.load_state_dict(torch.load('lstm_model.pth'))
+⚡ Sample Output
+Example sequence mapping:
+
+vbnet
+Copy
+Edit
+Input:  'THE MYSTERIOUS ISLAND ***\n\n\n\n\nProduced b'
+Target: 'HE MYSTERIOUS ISLAND ***\n\n\n\n\nProduced by'
+Hardware
+Automatically uses CUDA if available:
+
+python
+Copy
+Edit
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+Notes
+Consider converting text_chunks to a single NumPy array before torch.tensor() for better performance.
+
+Sequence generation and sampling (text generation) can be added for further exploration.
