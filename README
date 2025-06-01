@@ -1,7 +1,7 @@
-Character-Level RNN/LSTM Text Generator
+🧠 Character-Level RNN/LSTM Text Generator
 This project implements character-level RNN and LSTM models using PyTorch to learn from the classic novel The Mysterious Island by Jules Verne (sourced from Project Gutenberg).
 
- Overview
+📁 Overview
 Preprocesses text by extracting and encoding characters.
 
 Generates training sequences using a sliding window.
@@ -12,7 +12,7 @@ Implements both LSTM and RNN models for text prediction.
 
 Trains the models and evaluates character-level accuracy.
 
- Dependencies
+🛠️ Dependencies
 Python 3.7+
 
 PyTorch
@@ -25,8 +25,7 @@ bash
 Copy
 Edit
 pip install torch numpy
-
-Dataset
+📚 Dataset
 The text is extracted from 1268-0.txt, downloaded from Project Gutenberg. The relevant content is sliced between:
 
 sql
@@ -34,24 +33,23 @@ Copy
 Edit
 Start: 'THE MYSTERIOUS ISLAND'  
 End: 'End of the Project Gutenberg'
-
-Preprocessing
+🧾 Preprocessing
 Creates a character vocabulary (char2int and char_array)
 
 Encodes text as integer sequences
 
 Generates training chunks of length 41 (seq_length=40 + 1)
 
-Model Architectures
+🧱 Model Architectures
 Two models are implemented:
 
-LSTMModel
+🔷 LSTMModel
 Embedding → LSTM → Fully Connected (FC)
 
-RNNModel
+🟢 RNNModel
 Embedding → RNN → Fully Connected (FC)
 
-Training
+🏋️‍♂️ Training
 The models are trained using:
 
 CrossEntropyLoss
@@ -67,7 +65,7 @@ Copy
 Edit
 train_model(lstm_model, model_type='lstm')
 train_model(rnn_model, model_type='rnn')
-Model Checkpoints
+💾 Model Checkpoints
 Saved models:
 
 lstm_model.pth
@@ -88,14 +86,14 @@ Copy
 Edit
 Input:  'THE MYSTERIOUS ISLAND ***\n\n\n\n\nProduced b'
 Target: 'HE MYSTERIOUS ISLAND ***\n\n\n\n\nProduced by'
-Hardware
+🖥️ Hardware
 Automatically uses CUDA if available:
 
 python
 Copy
 Edit
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-Notes
+📌 Notes
 Consider converting text_chunks to a single NumPy array before torch.tensor() for better performance.
 
 Sequence generation and sampling (text generation) can be added for further exploration.
