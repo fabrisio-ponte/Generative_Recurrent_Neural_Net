@@ -1,7 +1,4 @@
-# write_readme.py
-
-readme_text = """
-# 🧠 Character-Level Text Generator using RNN & LSTM
+# Character-Level Text Generator using RNN & LSTM
 
 This project implements a character-level text generation model using PyTorch. We train both **RNN** and **LSTM** models on Jules Verne's *The Mysterious Island*, sourced from Project Gutenberg.
 
@@ -11,7 +8,7 @@ This project implements a character-level text generation model using PyTorch. W
 
 ---
 
-## 📚 Dataset
+## Dataset
 
 The dataset used is the full text of **The Mysterious Island** from [Project Gutenberg](https://www.gutenberg.org/ebooks/1268).
 
@@ -23,7 +20,7 @@ The dataset used is the full text of **The Mysterious Island** from [Project Gut
 
 ---
 
-## ⚙️ Preprocessing
+## ⚙Preprocessing
 
 - Create a character-level vocabulary and mapping (`char2int` and `char_array`)
 - Encode the entire text into integers
