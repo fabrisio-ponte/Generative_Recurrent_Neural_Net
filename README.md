@@ -2,12 +2,6 @@
 
 This project implements a character-level text generation model using PyTorch. We train both **RNN** and **LSTM** models on Jules Verne's *The Mysterious Island*, sourced from Project Gutenberg.
 
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/The_Mysterious_Island_by_Jules_Verne_1874_First_edition.jpg/800px-The_Mysterious_Island_by_Jules_Verne_1874_First_edition.jpg" alt="The Mysterious Island Cover" width="300"/>
-</p>
-
----
-
 ## Dataset
 
 The dataset used is the full text of **The Mysterious Island** from [Project Gutenberg](https://www.gutenberg.org/ebooks/1268).
